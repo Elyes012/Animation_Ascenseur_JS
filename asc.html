@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<style>
+  #container {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    background: yellow;
+  }
+
+  #animate {
+    width: 90px;
+    height: 130px;
+    position: absolute;
+
+    left: 350px;
+    bottom: 0px;
+    background-color: red;
+  }
+</style>
+
+<body>
+
+  <p>
+    <button onclick="moveup();">RDC vers 1</button>
+    <button onclick="myMove2();">2</button>
+    <button onclick=" movedown();">0</button>
+    <button onclick="move1()">1</button>
+  </p>
+
+  <div id="container">
+    <div id="animate"></div>
+  </div>
+
+  <script>
+    var pos = 0;
+
+    // 0 vers 1éme
+    function moveup() {
+      var elem = document.getElementById("animate");
+
+
+      if (pos <= 200) {
+        var id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos == 200) {
+
+            clearInterval(id);
+
+          } else {
+            pos++;
+            elem.style.bottom = pos + 'px';
+
+          }
+
+        }
+      }
+    }
+
+    // 1ére vers 2éme et rdc vers 2eme
+    function myMove2() {
+      var elem = document.getElementById("animate");
+
+      if (pos >= 200) {
+        var id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos == 470) {
+            //console.log(pos);
+            clearInterval(id);
+
+          } else {
+            pos++;
+            elem.style.bottom = pos + 'px';
+          }
+        }
+
+      } else  {
+     
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 470) {
+           
+            clearInterval(id);
+
+          } else {
+            pos++;
+            elem.style.bottom = pos + 'px';
+          }
+        }
+       }
+       
+    }
+
+
+
+
+
+
+
+    function move1() {
+      var elem = document.getElementById("animate");
+      var pos = 0;
+      var id = setInterval(frame, 5);
+
+      function frame() {
+      
+        if (pos == 200) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.top = pos + 'px';
+          //elem.style.top = pos + 'px'; 
+
+
+
+        }
+      }
+    }
+
+
+
+
+
+
+
+ function movedown() 
+ {console.log(pos);
+      var elem = document.getElementById("animate");
+      
+      if (pos <470) {
+        var id = setInterval(frame, 5);
+      
+        function frame() {
+          if (pos <= 200) {
+           
+            clearInterval(id);
+
+          } else {
+            pos--;
+            elem.style.bottom = pos + 'px';
+          }
+        }
+
+      } else
+        {
+        
+        var id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 0) {
+           
+            clearInterval(id);
+
+          } else {
+            pos--;
+            elem.style.bottom = pos + 'px';
+          }
+        }
+       }
+
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>
+           
